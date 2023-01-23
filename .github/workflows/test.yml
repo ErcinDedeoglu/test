@@ -27,12 +27,12 @@ jobs:
         #   with:
         #     username: ${{ secrets.DOCKERHUB_USERNAME }}
         #     password: ${{ secrets.DOCKERHUB_TOKEN }}
-        # - name: Pull
-        #   id: pull
-        #   run: |
-        #     docker pull dslim/slim
-        #     docker pull nginx:latest
-        #   shell: bash
+        - name: Pull
+          id: pull
+          run: |
+#docker pull dslim/slim
+            docker pull ${{ inputs.image }}
+          shell: bash
         - name: Run
           id: run
           run: |
