@@ -32,8 +32,8 @@ jobs:
         - name: Run
           id: run
           run: |
-
-            docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock dslim/slim build nginx:latest
+            docker run nginx:latest
+#docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock dslim/slim build nginx:latest
           shell: bash
         - name: Ps
           id: ps
