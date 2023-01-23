@@ -33,8 +33,8 @@ jobs:
             docker pull nginx:latest
 
             
-        # docker pull ${{ inputs.image }}
-        #   shell: bash
+# docker pull ${{ inputs.image }}
+#   shell: bash
 #docker pull dslim/slim
         - name: Run
           id: run
