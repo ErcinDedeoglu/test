@@ -22,6 +22,7 @@ jobs:
           id: pull
           run: |
             docker pull dslim/slim
+            docker pull nginx:latest
           shell: bash
         - name: Run
           id: run
