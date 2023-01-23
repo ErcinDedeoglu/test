@@ -31,9 +31,8 @@ jobs:
           id: pull
           run: |
             docker pull ${{ inputs.image }}
-#docker pull dslim/slim
-
           shell: bash
+#docker pull dslim/slim
         - name: Run
           id: run
           run: |
