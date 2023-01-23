@@ -18,9 +18,24 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-        - name: test
-          id: test
+        - name: Pull
+          id: pull
           run: |
-            echo test
+            docker pull dslim/slim
+          shell: bash
+        - name: Run
+          id: run
+          run: |
+            docker run -it --rm dslim/slim build nginx:latest
+          shell: bash
+        - name: Ps
+          id: ps
+          run: |
+            docker ps -a
+          shell: bash
+        - name: Images
+          id: images
+          run: |
+            docker images
           shell: bash
         
