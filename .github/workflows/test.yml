@@ -1,0 +1,26 @@
+﻿name: test
+
+on:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: "The reason for running the workflow"
+        required: true
+        default: "Manual run"
+  #push:
+  #  branches: [ master ]
+  #pull_request:
+  #  branches: [ master ]
+  
+env:
+  DEPLOY_PATH: x
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+        - name: test
+          id: test
+          run: |
+            echo test
+          shell: bash
+        
