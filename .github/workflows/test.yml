@@ -36,7 +36,7 @@ jobs:
         - name: Run
           id: run
           run: |
-            docker run --rm -v /var/run/docker.sock:/var/run/docker.sock --env POSTGRES_PASSWORD=password dslim/slim build ${{ inputs.image }}
+            docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -e POSTGRES_PASSWORD=test1234 dslim/slim build ${{ inputs.image }}
 #docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock dslim/slim build nginx:latest
           shell: bash
         - name: Ps
