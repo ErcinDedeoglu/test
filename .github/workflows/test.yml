@@ -27,8 +27,8 @@ jobs:
           with:
             username: ${{ secrets.DOCKERHUB_USERNAME }}
             password: ${{ secrets.DOCKERHUB_TOKEN }}
-        # - name: Pull
-        #   id: pull
+        - name: Pull
+          id: pull
           run: |
             docker pull nginx:latest
 
