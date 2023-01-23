@@ -36,9 +36,11 @@ jobs:
         - name: Run
           id: run
           run: |
-            docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -e POSTGRES_PASSWORD=test1234 dslim/slim build ${{ inputs.image }}
+            curl -sL https://raw.githubusercontent.com/slimtoolkit/slim/master/scripts/install-slim.sh | sudo -E bash -
+
+# docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -e POSTGRES_PASSWORD test1234 dslim/slim build ${{ inputs.image }}
 #docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock dslim/slim build nginx:latest
-          shell: bash
+          # shell: bash
         - name: Ps
           id: ps
           run: |
