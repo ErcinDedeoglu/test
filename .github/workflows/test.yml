@@ -29,8 +29,11 @@ jobs:
             password: ${{ secrets.DOCKERHUB_TOKEN }}
         # - name: Pull
         #   id: pull
-        #   run: |
-        #     docker pull ${{ inputs.image }}
+          run: |
+            docker pull nginx:latest
+
+            
+        # docker pull ${{ inputs.image }}
         #   shell: bash
 #docker pull dslim/slim
         - name: Run
