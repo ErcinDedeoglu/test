@@ -43,8 +43,9 @@ jobs:
             tar -xvf ds.tar.gz
             cd dist_linux
 
-            ./slim build nginx:latest
+            ./slim- -env POSTGRES_PASSWORD=test1234 build postgres:15.1-bullseye
 
+# ./slim build nginx:latest
 
 # chmod +x docker-slim
 # chmod +x slim-sensor
