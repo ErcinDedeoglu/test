@@ -44,7 +44,12 @@ jobs:
             tar -xvf ds.tar.gz
             cd dist_linux
 
-            ./slim build --target ${{ inputs.image }} --env POSTGRES_HOST_AUTH_METHOD=trust --show-clogs=true --http-probe=false
+            ./slim build --target ${{ inputs.image }} \
+              --env POSTGRES_HOST_AUTH_METHOD=trust \
+              --show-clogs=true \
+              --http-probe=false \
+              --exclude-mounts \
+              --exec "pgbench -i -U postgres -s 10 postgres && pgbench -U postgres -c 10 -t 2000 postgres && psql -U postgres postgres -c 'DROP TABLE pgbench_accounts, pgbench_branches, pgbench_tellers, pgbench_history;'"
 
 # ./slim build nginx:latest
 
