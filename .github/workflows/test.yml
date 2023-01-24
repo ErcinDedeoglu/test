@@ -30,9 +30,10 @@ jobs:
         - name: Pull
           id: pull
           run: |
-            docker pull nginx:latest
+            docker pull postgres:15.1-bullseye
 
-            
+
+# docker pull nginx:latest            
 # docker pull ${{ inputs.image }}
 #   shell: bash
 #docker pull dslim/slim
